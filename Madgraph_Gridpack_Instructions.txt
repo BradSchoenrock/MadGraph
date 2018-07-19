@@ -1,0 +1,78 @@
+
+
+instructions: 
+
+
+install and set up MG and pythia
+
+./bin/mg5
+
+in the MG environment
+
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+define l = l+ l-
+define vlall = vl vl~
+define all = j l vlall
+define bbbar = b b~
+define ttbar = t t~
+define w = w- w+
+generate p p > ttbar z j bbbar, ttbar > all all bbbar, z > all all @0
+
+launch
+
+upon being prompted
+The following switches determine which programs are run:
+ 1 Run the pythia shower/hadronization:                   pythia=OFF
+ 2 Run PGS as detector simulator:                            pgs=OFF
+ 3 Run Delphes as detector simulator:                    delphes=NOT INSTALLED
+ 4 Decay particles with the MadSpin module:              madspin=OFF
+ 5 Add weight to events based on coupling parameters:   reweight=OFF
+  Either type the switch number (1 to 5) to change its default setting,
+  or set any switch explicitly (e.g. type 'madspin=ON' at the prompt)
+  Type '0', 'auto', 'done' or just press enter when you are done.
+ [0, 1, 2, 4, 5, auto, done, pythia=ON, pythia=OFF, ... ][60s to answer] 
+>
+
+1 
+
+to turn pythia on. 
+
+
+then upon being prompted 
+Do you want to edit a card (press enter to bypass editing)?
+  1 / param      : param_card.dat
+  2 / run        : run_card.dat
+  3 / pythia     : pythia_card.dat
+ you can also
+   - enter the path to a valid card or banner.
+   - use the 'set' command to modify a parameter directly.
+     The set option works only for param_card and run_card.
+     Type 'help set' for more information on this command.
+   - call an external program (ASperGE/MadWidth/...).
+     Type 'help' for the list of available command
+ [0, done, 1, param, 2, run, 3, pythia, enter path] 
+
+1 to remove white lines from the param card this has an effet on the gridpack generation. 
+
+2 to edit the run card. make sure to change these two lines 
+
+.true.     = gridpack  !True = setting up the grid pack
+'cteq6l1'    = pdlabel     ! PDF set      
+
+and you are good to start generating the gridpack for 13TeV with all decays. 
+
+
+
+once you have a gridpack you can use it to generate events i do this on lxplus and you can look here
+
+/afs/cern.ch/user/b/bschoenr/public/tzProduction_min/tz_13TeV_all
+
+copy the gridpack that was generated into a new directory naming it group.phys-gener.madgraph5.110491.tZ_stchan_Zall_MGDecays_13TeV.TXT.mc12_v1._00001.tar.gz along with MC12JobOptions/ and MC12.110491.MadGraphPythia_AUET2B_CTEQ6L1_tZ_stchan_Zall.py from my directory. 
+
+export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+alias setupATLAS="source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh"
+export ALRB_localConfigDir=$HOME/localConfig
+asetup 17.2.13.10,slc5,here
+
+Generate_trf.py ecmEnergy=13000 runNumber=110491 firstEvent=1 maxEvents=5000 randomSeed=12345 jobConfig=MC12.110491.MadGraphPythia_AUET2B_CTEQ6L1_tZ_stchan_Zall.py evgenJobOpts=MC12JobOpts-00-14-22_v0.tar.gz inputGenConfFile=group.phys-gener.madgraph5.110491.tZ_stchan_Zall_MGDecays_13TeV.TXT.mc12_v1._00001.tar.gz outputEVNTFile=$HOME/tz_13TeV_validation/tz_13TeV_all/mc12_13TeV_all.110491.EVNT._00001.pool.root

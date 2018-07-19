@@ -1,0 +1,12 @@
+1       u d~ > vt ta+ b e- e+ g b~,c s~ > vt ta+ b e- e+ g b~,u d~ > vt ta+ b mu- mu+ g b~,c s~ > vt ta+ b mu- mu+ g b~
+mirror  d~ u > vt ta+ b e- e+ g b~,s~ c > vt ta+ b e- e+ g b~,d~ u > vt ta+ b mu- mu+ g b~,s~ c > vt ta+ b mu- mu+ g b~
+2       u d~ > vt ta+ b ve ve~ g b~,c s~ > vt ta+ b ve ve~ g b~,u d~ > vt ta+ b vm vm~ g b~,c s~ > vt ta+ b vm vm~ g b~
+mirror  d~ u > vt ta+ b ve ve~ g b~,s~ c > vt ta+ b ve ve~ g b~,d~ u > vt ta+ b vm vm~ g b~,s~ c > vt ta+ b vm vm~ g b~
+3       u d~ > vt ta+ b vt vt~ g b~,c s~ > vt ta+ b vt vt~ g b~
+mirror  d~ u > vt ta+ b vt vt~ g b~,s~ c > vt ta+ b vt vt~ g b~
+4       d u~ > vt~ ta- b~ e- e+ g b,s c~ > vt~ ta- b~ e- e+ g b,d u~ > vt~ ta- b~ mu- mu+ g b,s c~ > vt~ ta- b~ mu- mu+ g b
+mirror  u~ d > vt~ ta- b~ e- e+ g b,c~ s > vt~ ta- b~ e- e+ g b,u~ d > vt~ ta- b~ mu- mu+ g b,c~ s > vt~ ta- b~ mu- mu+ g b
+5       d u~ > vt~ ta- b~ ve ve~ g b,s c~ > vt~ ta- b~ ve ve~ g b,d u~ > vt~ ta- b~ vm vm~ g b,s c~ > vt~ ta- b~ vm vm~ g b
+mirror  u~ d > vt~ ta- b~ ve ve~ g b,c~ s > vt~ ta- b~ ve ve~ g b,u~ d > vt~ ta- b~ vm vm~ g b,c~ s > vt~ ta- b~ vm vm~ g b
+6       d u~ > vt~ ta- b~ vt vt~ g b,s c~ > vt~ ta- b~ vt vt~ g b
+mirror  u~ d > vt~ ta- b~ vt vt~ g b,c~ s > vt~ ta- b~ vt vt~ g b
